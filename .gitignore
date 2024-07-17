@@ -1,5 +1,4 @@
-# created by virtualenv automatically
 .venv/bin
+.data
+.idea
 .env
-.data/
-.idea/
