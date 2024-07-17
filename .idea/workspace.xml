@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ce7cc9-2806-40eb-9cf4-c0858d833c55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/gdvc.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_template.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/commit_command.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project/project.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project/project_loading.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/save_load/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/save_load/json_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/save_load/json_serializable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
