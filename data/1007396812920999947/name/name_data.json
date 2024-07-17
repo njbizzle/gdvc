@@ -1,0 +1,18 @@
+{
+ "deserialize_tag": "Project",
+ "name": "name",
+ "guild_id": 1007396812920999947,
+ "cmd_prefix": "prefix",
+ "initial_commit": {
+  "deserialize_tag": "Commit",
+  "project_name": "",
+  "author_id": 0,
+  "gd_id": 0,
+  "description": "Initial Commit",
+  "next_commits": [],
+  "serializable_commit": true
+ },
+ "project_path": "",
+ "json_path": "/Users/natemurphy/Desktop/projects/gdvc/gdvc/data/1007396812920999947/name/name_data.json",
+ "root_path": "/Users/natemurphy/Desktop/projects/gdvc/gdvc/data/1007396812920999947/name"
+}
