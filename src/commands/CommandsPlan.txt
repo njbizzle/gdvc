@@ -1,0 +1,89 @@
+Terminology:
+You checkout a project before you commit to it. If multiple commits derive from a single other commit, there is an offshoot.
+
+
+/ create (name, prefix, ?initial_id) (permissions - any)
+
+    name:str - The name of the project.
+    prefix:str - The characters used to prefix the command. All spaces will be removed and replaced with underscores.
+    initial_id:int - The id of the first commit. What will appear when someone attempts to checkout the project. (Defaults to 0)
+
+    Creates a new project and adds the initial commit. The initial commit will have a description of "Initial commit.", be authored by the person running the command.
+
+
+/ checkout (?commit_id, ?desc) (permissions - commit)
+
+    commit_id:int - The id of the commit you are checking out. (Defaults to most recent commit)
+    desc:int - Short description of the intentions of the checkout.
+
+    If the project isn't already checked out, it checks out the last commit.
+
+
+/ cancel_checkout () (permissions - moderate)
+
+    Cancels the current checkout if there is any.
+
+
+/ commit (id, desc, ?parent_commit) (permissions - commit)
+
+    id:int - The id of the level in Geometry Dash.
+    desc:str - Short description of what was done in the commit.
+    parent_commit:int (moderate) - The id of the commit for this to be after. This overrides any checkout and requires moderator perms.
+
+    If the project is checked out under the user account, it will push a new commit to the project with the information specified.
+
+/ view (commit_id:commit_index... ) (permissions - view)
+
+    commit_id:int - The id of the commit that you want to specify a specific offshoot from.
+    commit_index:int - The index of the offshoot. If not specified each will default to the first commit, which is by default the earliest.
+
+    Displays the project and all its commits, defaulting to the first offshoot if there are multiple commits.
+
+
+/ reorder (commit_id, move_index, ?target_index) (permissions - moderate)
+
+    commit_id:int - The id of the commit that you want to reoder the offshoots of.
+    move_index:int - The index of the offshoot on the commit you want to reoder.
+    target_index:int - The target index of the offshoot at the move index. (Defaults to 0, making it the most prioritized)
+
+
+/ prune (commit_id) (permissions - moderate)
+
+    commit_id:int The id of the commit to remove.
+
+    Removes a commit, disconnecting all that derive from it.
+
+/ view_config () (permissions - view)
+
+    Displays the state of all options editable with the /config command.
+
+
+/ config () (permissions - admin)
+
+    Allows you to configure the project.
+
+
+/ view_perms () (permissions - view)
+
+    Displays current view, commit, moderate and admin roles.
+
+
+/ edit_perms (?view, ?commit, ?moderate, ?admin) (permissions - admin)
+
+    view:role - Anyone with this role can interact with the project on the most basic level. (Defaults to @everyone)
+    commit:role - Anyone with this role can checkout and commit to the project as well as report commits. (Defaults to @everyone)
+    moderate:role - Anyone with this role can prune and edit commits. (Defaults to @everyone)
+    admin:role - Anyone with this role can configure the project and has access to all commands. (Defaults to @everyone)
+
+    Allows you to edit permissions regarding a project.
+
+
+/ view_channels () (permissions - moderate)
+
+    Displays the channels configured to listen and display.
+
+
+/ edit_channels (?change_log, ?moderator_log) (permissions - admin)
+
+    change_log:channel - Sets the channel to display all changes to the project. (Defaults to none)
+    moderator_log:channel - Sets the channel to display all moderation logs. (Defaults to none)
