@@ -25,7 +25,6 @@ class Bot(discord.Client):
 
         print(f"Projects Loaded : {", ".join([project.name for project in src.get_loaded_projects()])}")
         print(f"Commands Loaded : {", ".join(self.bot_commands)}")
-        print()
 
 
     async def on_message(self, message : discord.Message):
