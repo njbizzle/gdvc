@@ -1,4 +1,5 @@
 import src
+from src import command_tools
 import discord
 
 class Bot(discord.Client):
@@ -7,7 +8,11 @@ class Bot(discord.Client):
         super().__init__(intents=intents)
 
     async def on_ready(self):
-        src.create_project_json(src.Project("name", self.guilds[0].id, "prefix"))
+        src.create_project_json(src.Project(
+            name="name",
+            guild_id=self.guilds[0].id,
+            cmd_prefix="p"
+        ))
 
         def is_subclass(cls1, cls2):
             try:
@@ -15,7 +20,7 @@ class Bot(discord.Client):
             except TypeError:
                 return False
 
-        self.bot_commands : dict[str, src.commands] = {cmd().name:cmd for name, cmd in src.commands.__dict__.items() if is_subclass(cmd, src.Command)}
+        self.bot_commands : dict[str, src.commands] = {cmd().name:cmd for name, cmd in src.commands.__dict__.items() if is_subclass(cmd, command_tools.Command)}
 
         src.clear_loaded_projects()
         for guild in self.guilds:
@@ -26,14 +31,13 @@ class Bot(discord.Client):
         print(f"Projects Loaded : {", ".join([project.name for project in src.get_loaded_projects()])}")
         print(f"Commands Loaded : {", ".join(self.bot_commands)}")
 
-
     async def on_message(self, message : discord.Message):
         if message.content[0] == "/":
             try:
                 await self.parse_project_cmd(message)
             except ValueError as e:
-                await message.channel.send(content=str(e))
-
+                message.interaction
+                await message.channel.send(content=str(e), allowed_mentions=discord.AllowedMentions.none())
 
     async def parse_project_cmd(self, message : discord.Message):
         message.content = message.content[1:] # get rid of slash
@@ -55,7 +59,6 @@ class Bot(discord.Client):
             raise ValueError("Bad Input. Command Does not exist.")
 
         await command().run(message, project, args)
-
 
     def split_command_args(self, content) -> tuple[str, dict[str, str]]:
         in_quotes : bool = False

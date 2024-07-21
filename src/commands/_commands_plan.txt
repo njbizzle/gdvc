@@ -1,5 +1,8 @@
 Terminology:
+
 You checkout a project before you commit to it. If multiple commits derive from a single other commit, there is an offshoot.
+A path from the initial commit to end commit (one without any deriving from it) is called a branch.
+This is unlike a branch in the traditional git context.
 
 
 / create (name, prefix, ?initial_id) (permissions - any)
